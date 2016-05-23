@@ -42,7 +42,7 @@ public class CustomsCommentGenerator extends DefaultCommentGenerator implements 
 	}
 
 	public void addConfigurationProperties(Properties paramProperties) {
-		this.properties.putAll(properties);
+		this.properties.putAll(paramProperties);
 		this.suppressDate = StringUtility.isTrue(properties.getProperty("suppressDate"));
 		this.suppressAllComments = StringUtility.isTrue(properties.getProperty("suppressAllComments"));
 		this.suppressClassComment = StringUtility.isTrue(properties.getProperty("suppressClassComment"));

@@ -30,7 +30,7 @@ public class ExampleSubPackagePlugin extends PluginAdapter {
 		
 		StringBuilder type = new StringBuilder();
 		type.append(exampleType.substring(0, exampleType.lastIndexOf(".")));
-		type.append(subPackageName);
+		type.append(".").append(subPackageName);
 		type.append(exampleType.substring(exampleType.lastIndexOf(".")));
 		
 		log.debug("the new type: {}", type.toString());

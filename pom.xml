@@ -4,9 +4,8 @@
 	<groupId>com.github.dumars</groupId>
 	<artifactId>mybatis-generator-ext</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>mybatis generator ext</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
 		<encoding>UTF-8</encoding>
