@@ -348,7 +348,7 @@ public class NoExamplePlugin extends PluginAdapter implements Plugin {
 	@Override
 	public boolean sqlMapUpdateByExampleSelectiveElementGenerated(XmlElement paramXmlElement,
 			IntrospectedTable paramIntrospectedTable) {
-		return true;
+		return false;
 	}
 
 	@Override
