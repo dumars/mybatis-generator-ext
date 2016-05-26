@@ -10,6 +10,7 @@ import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.api.dom.java.InnerClass;
+import org.mybatis.generator.api.dom.java.InnerEnum;
 import org.mybatis.generator.api.dom.java.Method;
 import org.mybatis.generator.api.dom.java.Parameter;
 import org.mybatis.generator.api.dom.xml.TextElement;
@@ -58,6 +59,10 @@ public class CustomsCommentGenerator extends DefaultCommentGenerator implements 
 		format = new SimpleDateFormat(dateFormatPattern);
 	}
 
+	public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable) {
+		addClassComment(innerClass, introspectedTable, false);
+	}
+	
 	public void addFieldComment(Field field, IntrospectedTable table,
 			IntrospectedColumn column) {
 		if (this.suppressAllComments) {
@@ -74,9 +79,17 @@ public class CustomsCommentGenerator extends DefaultCommentGenerator implements 
 		field.addJavaDocLine(combinColumnComment(column));
 		field.addJavaDocLine(" */");
 	}
-	
-	public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable) {
-		addClassComment(innerClass, introspectedTable, false);
+
+	@Override
+	public void addFieldComment(Field field, IntrospectedTable introspectedTable) {
+	}
+
+	@Override
+	public void addGeneralMethodComment(Method method, IntrospectedTable introspectedTable) {
+	}
+
+	@Override
+	public void addEnumComment(InnerEnum innerEnum, IntrospectedTable introspectedTable) {
 	}
 
 	public void addClassComment(InnerClass innerClass,
@@ -132,18 +145,17 @@ public class CustomsCommentGenerator extends DefaultCommentGenerator implements 
 			return;
 		}
 
-		xmlElement.addElement(new TextElement("<!--"));
-		
 		String s = getDateString();
 		if (s != null) {
+			xmlElement.addElement(new TextElement("<!--"));
+			
 			StringBuilder sb = new StringBuilder();
 			sb.append("  This file was generated on ");
 			sb.append(s);
 			sb.append('.');
 			xmlElement.addElement(new TextElement(sb.toString()));
+			xmlElement.addElement(new TextElement("-->"));
 		}
-
-		xmlElement.addElement(new TextElement("-->"));
 	}
 
 	public void addRootComment(XmlElement paramXmlElement) {
