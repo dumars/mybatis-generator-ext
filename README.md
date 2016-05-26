@@ -14,11 +14,13 @@
 	</repository>
 </repositories>
 
-<dependency>
-	<groupId>com.github.dumars</groupId>
-	<artifactId>mybatis-generator-ext</artifactId>
-	<version>0.0.3</version>
-</dependency>
+<dependencies>
+	<dependency>
+		<groupId>com.github.dumars</groupId>
+		<artifactId>mybatis-generator-ext</artifactId>
+		<version>0.0.3</version>
+	</dependency>
+</dependencies>
 ```
 
 ---
