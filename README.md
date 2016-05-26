@@ -1,6 +1,29 @@
 # mybatis-generator-ext
 
-###CustomsCommentGenerator plugin
+---
+### Maven
+
+```xml
+<repositories>
+	<repository>
+		<id>mybatis-generator-ext-mvn-repo</id>
+		<url>https://raw.github.com/dumars/mybatis-generator-ext/mvn-repo/</url>
+		<snapshots>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		</snapshots>
+	</repository>
+</repositories>
+
+<dependency>
+	<groupId>com.github.dumars</groupId>
+	<artifactId>mybatis-generator-ext</artifactId>
+	<version>0.0.3</version>
+</dependency>
+```
+
+---
+### CustomsCommentGenerator plugin
 for comment configuration.
 
 CustomsCommentGenerator extends DefaultCommentGenerator
