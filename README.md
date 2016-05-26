@@ -1,6 +1,5 @@
 # mybatis-generator-ext
 
----
 ### Maven
 
 ```xml
