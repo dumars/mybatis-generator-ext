@@ -183,7 +183,7 @@ public class CustomsCommentGenerator extends DefaultCommentGenerator implements 
 	
 	protected void addCustomComment(Method method, IntrospectedColumn column) {
 		if(showColumnName)
-			method.addJavaDocLine(" * Column name: " + column.getActualColumnName());
+			method.addJavaDocLine(" * Column name: " + column.getActualColumnName() + "<br>");
 		
 		StringBuilder sb = new StringBuilder();
 		if(showColumnJdbcType) {
@@ -192,13 +192,13 @@ public class CustomsCommentGenerator extends DefaultCommentGenerator implements 
 			if(column.getScale() != 0)
 				sb.append(".").append(column.getScale());
 			
-			sb.append(")");
+			sb.append(")<br>");
 			method.addJavaDocLine(sb.toString());
 		}
 		
 		if(showColumnDefaultValue && StringUtility.stringHasValue(column.getDefaultValue())) {
 			sb.setLength(0);
-			sb.append(" * Default value: ").append(column.getDefaultValue());
+			sb.append(" * Default value: ").append(column.getDefaultValue()).append("<br>");
 			method.addJavaDocLine(sb.toString());
 		}
 		
